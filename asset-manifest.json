@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-mobilePhone-store/static/css/main.96fcc90b.css",
+    "main.js": "/React-mobilePhone-store/static/js/main.fbef5c1e.js",
+    "index.html": "/React-mobilePhone-store/index.html",
+    "main.96fcc90b.css.map": "/React-mobilePhone-store/static/css/main.96fcc90b.css.map",
+    "main.fbef5c1e.js.map": "/React-mobilePhone-store/static/js/main.fbef5c1e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96fcc90b.css",
+    "static/js/main.fbef5c1e.js"
+  ]
+}
