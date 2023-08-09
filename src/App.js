@@ -145,7 +145,7 @@ export default function App() {
 
                 <Routes>
                     <Route
-                        path="/"
+                        path="React-mobilePhone-store"
                         element={
                             <Home
                                 cards={cards}
@@ -156,8 +156,8 @@ export default function App() {
                             />
                         }
                     />
-                    <Route path="/favorites" element={<Favorites />} />
-                    <Route path="/orders" element={<Orders />} />
+                    <Route path="React-mobilePhone-store/favorites" element={<Favorites />} />
+                    <Route path="React-mobilePhone-store/orders" element={<Orders />} />
                     {/* TODO: Розширити orders сторінками, щоб по 5-10 ордерів на одній сторінці й так до 20-30. Також додати навігацію по сторінкам */}
                 </Routes>
                 {/* Зробити React Router для невідомих сторінок '*' 404 */}

@@ -27,7 +27,7 @@ export default function Header(props) {
                 </li>
 
                 <li>
-                    <Link to="/favorites">
+                    <Link to="React-mobilePhone-store/favorites">
                         <img
                             width="18"
                             height="18"
@@ -38,7 +38,7 @@ export default function Header(props) {
                 </li>
 
                 <li>
-                    <Link to="/orders">
+                    <Link to="React-mobilePhone-store/orders">
                         <img
                             width="18"
                             height="18"

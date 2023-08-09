@@ -30,6 +30,7 @@ a {
 
     .content__header {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         margin: 0 0 40px 0;
         justify-content: space-between;
