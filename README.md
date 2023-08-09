@@ -16,7 +16,7 @@ In this project I used:
         * custom hook
 * __Service MockApi as db__
 
-[Link on this website](https://k-a-webdev.github.io/DateTimer_React/)
+[Link on this website](https://k-a-webdev.github.io/React-mobilePhone-store/)
 
 ## Features
 This web-application is responsive not responsive yet. \
