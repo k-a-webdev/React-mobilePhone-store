@@ -1,7 +1,3 @@
-import { useContext, useEffect, useState } from "react";
-
-import AppContext from "../context";
-
 import Card from "../components/Card";
 
 export default function Home({
@@ -16,20 +12,9 @@ export default function Home({
             item.title.toLowerCase().includes(searchValue.toLowerCase())
         );
 
-        const fakeCards = [
-            {
-                id: 0,
-            },
-            {
-                id: 1,
-            },
-            {
-                id: 2,
-            },
-            {
-                id: 3,
-            },
-        ];
+        const fakeCards = new Array(4)
+            .fill({})
+            .map((elem, index) => ({ id: index }));
 
         return (isLoading ? fakeCards : filteredCards).map((card, index) => (
             <Card
@@ -45,7 +30,9 @@ export default function Home({
         <div className="content">
             <div className="content__header">
                 <h1>
-                    {searchValue ? `Search: "${searchValue}"` : "All mobile phones"}
+                    {searchValue
+                        ? `Search: "${searchValue}"`
+                        : "All mobile phones"}
                 </h1>
 
                 <div className="seaerch_block">

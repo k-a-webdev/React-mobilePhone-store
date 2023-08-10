@@ -1,7 +1,6 @@
 {
   "name": "phone_store",
   "version": "0.1.0",
-  "homepage": "https://k-a-webdev.github.io/React-mobilePhone-store/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

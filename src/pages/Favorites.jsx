@@ -3,6 +3,7 @@ import { useContext } from "react";
 import AppContext from "../context";
 
 import Card from "../components/Card";
+import NoData from "./NoData";
 
 export default function Favorite({ reloadFavorite }) {
     const { favoriteItems } = useContext(AppContext);
@@ -15,13 +16,11 @@ export default function Favorite({ reloadFavorite }) {
 
             <div className="cards">
                 {favoriteItems.map((card) => (
-                    <Card
-                        key={card.api_id}
-                        {...card}
-                        favorited={true}
-                    />
+                    <Card key={card.api_id} {...card} favorited={true} />
                 ))}
             </div>
+
+            {favoriteItems.length > 0 ? null : <NoData />}
         </div>
     );
 }

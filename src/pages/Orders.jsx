@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from "react";
-
-import AppContext from "../context";
+import { useEffect, useState } from "react";
 
 import Card from "../components/Card";
 import axios from "axios";
+import NoData from "./NoData";
 
 export default function Orders() {
     const [orders, setOrders] = useState([]);
@@ -24,30 +23,12 @@ export default function Orders() {
         })();
     }, []);
 
-    const fakeCards = [
-        {
-            id: 0,
-        },
-        {
-            id: 1,
-        },
-        {
-            id: 2,
-        },
-        {
-            id: 3,
-        },
-    ];
-    const fakeOrders = [
-        {
-            id: 0,
-            items: fakeCards,
-        },
-        {
-            id: 1,
-            items: fakeCards,
-        },
-    ];
+    const fakeCards = new Array(4)
+        .fill({})
+        .map((elem, index) => ({ id: index }));
+    const fakeOrders = new Array(2)
+        .fill({})
+        .map((elem, index) => ({ id: index, items: fakeCards }));
 
     return (
         <div className="content">
@@ -59,8 +40,10 @@ export default function Orders() {
                 {(isLoading ? fakeOrders : orders).map((item) => {
                     return (
                         <div className="order" key={item.id}>
-                            <h2 className="order__id">Order #{item.id}</h2>
-                            {/* TODO: Додати дату замовлення */}
+                            <div className="order__info">
+                                <h2>Order #{item.id}</h2>
+                                <p>Date: {orders.length > 0 ? `${item.fullDate.date} (${item.fullDate.time})` : null}</p>
+                            </div>
                             <div className="cards">
                                 {item.items.map((card) => (
                                     <Card
@@ -73,7 +56,13 @@ export default function Orders() {
                             </div>
                         </div>
                     );
-                })}
+                })
+                }
+                {
+                    (orders.length > 0) ? null : (
+                        <NoData />
+                    )
+                }
             </div>
         </div>
     );

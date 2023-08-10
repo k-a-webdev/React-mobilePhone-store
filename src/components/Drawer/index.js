@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Info from "../Info";
 import { useCart } from "../../hooks/useCart";
+import { fullDate } from "../orderDate";
 
 import styles from "./Drawer.module.scss";
 
@@ -22,7 +23,10 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
             setIsLoading(true);
             const { data } = await axios.post(
                 "https://64c79fc4a1fe0128fbd50a97.mockapi.io/orders",
-                { items: cartItems }
+                {
+                    items: cartItems,
+                    fullDate
+                }
             );
             for (let i = 0; i < cartItems.length; i++) {
                 const item = cartItems[i];
@@ -36,6 +40,7 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
             setCartItems([]);
         } catch (error) {
             alert("Purchase error!");
+            console.error(error);
         }
         setIsLoading(false);
     };
@@ -51,7 +56,7 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
                 <h2>
                     My cart
                     <img
-                        className='remove__btn'
+                        className="remove__btn"
                         src="img/btn_remove.svg"
                         alt="Remove"
                         onClick={onClose}
@@ -80,11 +85,11 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
                                         </div>
 
                                         <img
-                                            className='remove__btn'
+                                            className="remove__btn"
                                             src="img/btn_remove.svg"
                                             alt="Remove"
                                             onClick={() =>
-                                                addToDb(item, 'cart')
+                                                addToDb(item, "cart")
                                             }
                                         />
                                     </div>
@@ -108,8 +113,7 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
                                 className={styles.btn_green}
                                 onClick={onClickOrder}
                             >
-                                Checkout{" "}
-                                <img src="img/arrow.svg" alt="Arrow" />
+                                Checkout <img src="img/arrow.svg" alt="Arrow" />
                             </button>
                         </div>
                     </>
