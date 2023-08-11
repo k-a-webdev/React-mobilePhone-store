@@ -1,4 +1,5 @@
 import Card from "../components/Card";
+import Slider from "../components/Slider";
 
 export default function Home({
     cards,
@@ -28,6 +29,9 @@ export default function Home({
 
     return (
         <div className="content">
+            
+            <Slider />
+
             <div className="content__header">
                 <h1>
                     {searchValue

@@ -28,6 +28,53 @@ a {
 .content {
     padding: 20px 40px 40px;
 
+    .slider {
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+        
+        .swiper-button-next, .swiper-button-prev {
+            width: 40px;
+            height: 40px;
+            color: #111;
+            background-color: #fff;
+            border-radius: 20px;
+            font-size: medium;
+            font-weight: 600;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .slide_wrapper {
+            height: 300px;
+
+            .slide {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position-x: center;
+                background-position-y: center;
+                background-repeat: no-repeat;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: grabbing;
+
+                h1 {
+                    color: #fff;
+                    width: 25%;
+                    margin-left: 60px;
+                    text-shadow: -0.25px 0 #111, 0 0.25px #111, 0.25px 0 #111, 0 -0.25px #111;
+                }
+            }
+        }
+
+        
+    }
+
     .content__header {
         display: flex;
         flex-wrap: wrap;
@@ -86,7 +133,7 @@ a {
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center; 
+            justify-content: center;
             width: 245px;
             height: 55px !important;
             position: relative;
@@ -99,11 +146,11 @@ a {
             font-weight: 500;
             cursor: pointer;
             transition: background 0.2s ease-in-out;
-        
+
             &:hover {
                 background: lighten(#9dd558, 5%);
             }
-        
+
             &:active {
                 background: darken(#9dd558, 5%);
             }
@@ -145,13 +192,12 @@ a {
             opacity: 0.2;
             transition: opacity 0.3s ease-out;
             cursor: default;
-            
+
             &:hover {
                 opacity: 1;
             }
         }
     }
-    
 }
 
 .remove__btn {
