@@ -4,6 +4,7 @@ In this project I used:
 * __CSS__
 * __SCSS__
 * __JS__
+* __Swiper for slider__
 * __ReactJS:__
     * __CSS modules__
     * __React router__
@@ -23,10 +24,14 @@ This web-application is responsive not responsive yet. \
 Phones can be added not only to the cart, but also to favorites. All data is stored in a remote json file.
 Using the buttons in the header, you can open the shopping cart, go to the page of your favorite products and go to the page with already completed purchases.
 
-![Preview photo](public/img/Preview.png)
+![Preview photo](public/img/previews/Preview_1.png)
 
-![Preview photo](public/img/Preview_2.png)
+![Preview photo](public/img/previews/Preview_2.png)
 
-![Preview photo](public/img/Preview_3.png)
+![Preview photo](public/img/previews/Preview_3.png)
 
-![Preview photo](public/img/Preview_4.png)
+![Preview photo](public/img/previews/Preview_4.png)
+
+![Preview photo](public/img/previews/Preview_5.png)
+
+![Preview photo](public/img/previews/Preview_6.png)

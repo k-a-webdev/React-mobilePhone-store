@@ -34,12 +34,12 @@ a {
         position: relative;
         
         .swiper-button-next, .swiper-button-prev {
+            --swiper-navigation-size: large;
             width: 40px;
             height: 40px;
             color: #111;
             background-color: #fff;
             border-radius: 20px;
-            font-size: medium;
             font-weight: 600;
             position: absolute;
             top: 50%;
