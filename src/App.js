@@ -162,9 +162,8 @@ export default function App() {
                         />
                         <Route path="favorites" element={<Favorites />} />
                         <Route path="orders" element={<Orders />} />
-                        <Route path="*" element={<PageNotFound />} />
                     </Route>
-                    {/* TODO: Розширити orders сторінками, щоб по 5-10 ордерів на одній сторінці й так до 20-30. Також додати навігацію по сторінкам */}
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </div>
         </AppContext.Provider>

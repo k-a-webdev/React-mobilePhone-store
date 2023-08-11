@@ -35,43 +35,40 @@ export default function Orders() {
 
     return (
         <div className="content">
-            {orders.length > 0 ? (
-                <>
-                    <div className="content__header">
-                        <h1>All orders - {countOrders}. Last 5 orders:</h1>
-                    </div>
+            <div className="content__header">
+                {orders.length > 0 && (
+                    <h1>All orders - {countOrders}. Last 5 orders:</h1>
+                )}
+            </div>
 
-                    <div className="orders">
-                        {(isLoading ? fakeOrders : orders).map((item) => {
-                            return (
-                                <div className="order" key={item.id}>
-                                    <div className="order__info">
-                                        <h2>Order #{item.id}</h2>
-                                        <p>
-                                            Date:{" "}
-                                            {orders.length > 0
-                                                ? `${item.fullDate.date} (${item.fullDate.time})`
-                                                : null}
-                                        </p>
-                                    </div>
-                                    <div className="cards">
-                                        {item.items.map((card) => (
-                                            <Card
-                                                key={card.id}
-                                                {...card}
-                                                favorited={true}
-                                                loading={isLoading}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </>
-            ) : (
-                <NoData db="order" />
-            )}
+            <div className="orders">
+                {(isLoading ? fakeOrders : orders).map((item) => {
+                    return (
+                        <div className="order" key={item.id}>
+                            <div className="order__info">
+                                <h2>Order #{item.id}</h2>
+                                <p>
+                                    Date:{" "}
+                                    {orders.length > 0
+                                        ? `${item.fullDate.date} (${item.fullDate.time})`
+                                        : null}
+                                </p>
+                            </div>
+                            <div className="cards">
+                                {item.items.map((card) => (
+                                    <Card
+                                        key={card.id}
+                                        {...card}
+                                        loading={isLoading}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+
+            {orders.length === 0 && <NoData db="order" />}
         </div>
     );
 }

@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import axios from "axios";
+import { BsX } from "react-icons/bs";
+
 
 import Info from "../Info";
 import { useCart } from "../../hooks/useCart";
@@ -55,12 +57,11 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
             <div className={styles.drawer}>
                 <h2>
                     My cart
-                    <img
-                        className="remove__btn"
-                        src="img/btn_remove.svg"
-                        alt="Remove"
-                        onClick={onClose}
-                    />
+                    <div className={styles.btn_close}>
+                        <BsX className={styles.icon}
+                            onClick={onClose}
+                        />
+                    </div>
                 </h2>
 
                 {items.length > 0 ? (
@@ -84,14 +85,13 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
                                             <b>{item.price} $</b>
                                         </div>
 
-                                        <img
-                                            className="remove__btn"
-                                            src="img/btn_remove.svg"
-                                            alt="Remove"
-                                            onClick={() =>
-                                                addToDb(item, "cart")
-                                            }
-                                        />
+                                        <div className={styles.btn_close}>
+                                            <BsX className={styles.icon}
+                                                onClick={() =>
+                                                    addToDb(item, "cart")
+                                                }
+                                            />
+                                        </div>
                                     </div>
                                 );
                             })}
