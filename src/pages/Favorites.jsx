@@ -10,17 +10,25 @@ export default function Favorite({ reloadFavorite }) {
 
     return (
         <div className="content">
-            <div className="content__header">
-                <h1>My favorites</h1>
-            </div>
+            {favoriteItems.length > 0 ? (
+                <>
+                    <div className="content__header">
+                        <h1>My favorites</h1>
+                    </div>
 
-            <div className="cards">
-                {favoriteItems.map((card) => (
-                    <Card key={card.api_id} {...card} favorited={true} />
-                ))}
-            </div>
-
-            {favoriteItems.length > 0 ? null : <NoData db='favorite' />}
+                    <div className="cards">
+                        {favoriteItems.map((card) => (
+                            <Card
+                                key={card.api_id}
+                                {...card}
+                                favorited={true}
+                            />
+                        ))}
+                    </div>
+                </>
+            ) : (
+                <NoData db="favorite" />
+            )}
         </div>
     );
 }

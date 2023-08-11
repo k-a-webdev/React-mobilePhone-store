@@ -166,7 +166,6 @@ export default function App() {
                     </Route>
                     {/* TODO: Розширити orders сторінками, щоб по 5-10 ордерів на одній сторінці й так до 20-30. Також додати навігацію по сторінкам */}
                 </Routes>
-                {/* Зробити React Router для невідомих сторінок '*' 404 */}
             </div>
         </AppContext.Provider>
     );
