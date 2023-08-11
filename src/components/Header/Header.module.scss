@@ -38,15 +38,34 @@ header {
             display: flex;
             align-items: center;
 
-            &:first-child {
-                img {
-                    margin-right: 15px;
-                }
+            path {
+                stroke-width: 0.15;
             }
+
             &:first-child,
             &:nth-child(2) {
                 margin-right: 20px;
                 cursor: pointer;
+            }
+
+            @mixin headerIcon {
+                color: rgba(155, 155, 155, 1);
+                height: 22px;
+                width: auto;
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(101, 101, 101);
+                }
+            }
+
+            .cartIcon {
+                @include headerIcon();
+                margin-right: 15px;
+            }
+
+            .favoriteIcon, .orderIcon{
+                @include headerIcon();
             }
         }
     }

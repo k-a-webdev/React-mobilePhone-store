@@ -20,7 +20,7 @@ export default function Favorite({ reloadFavorite }) {
                 ))}
             </div>
 
-            {favoriteItems.length > 0 ? null : <NoData />}
+            {favoriteItems.length > 0 ? null : <NoData db='favorite' />}
         </div>
     );
 }

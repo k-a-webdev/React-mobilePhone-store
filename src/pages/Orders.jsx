@@ -11,9 +11,8 @@ export default function Orders() {
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.get(
-                    "https://64c79fc4a1fe0128fbd50a97.mockapi.io/orders"
-                );
+                const url = new URL('https://64c79fc4a1fe0128fbd50a97.mockapi.io/orders');
+                const { data } = await axios.get(url);
                 setOrders(data);
                 setIsLoading(false);
             } catch (error) {
@@ -33,7 +32,7 @@ export default function Orders() {
     return (
         <div className="content">
             <div className="content__header">
-                <h1>My orders</h1>
+                <h1>My orders({orders.length})</h1>
             </div>
 
             <div className="orders">
@@ -60,7 +59,7 @@ export default function Orders() {
                 }
                 {
                     (orders.length > 0) ? null : (
-                        <NoData />
+                        <NoData db='order' />
                     )
                 }
             </div>

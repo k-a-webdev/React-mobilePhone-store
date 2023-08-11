@@ -1,4 +1,7 @@
 .card {
+    display: grid;
+    align-items: start;
+    position: relative;
     border: 1px solid #f3f3f3;
     padding: 20px;
     width: 220px;
@@ -13,6 +16,8 @@
     .favorite {
         position: absolute;
         cursor: pointer;
+        top: 20px;
+        left: 20px;
     }
 
     .cardImg {
@@ -46,14 +51,33 @@
             }
         }
 
-        img {
-            // background: #fff;
-            // border: 1px solid #f2f2f2;
-            // box-sizing: border-box;
-            // border-radius: 8px;
-            // height: 32px;
-            // width: 32px;
+        .addToCart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 1px solid #f2f2f2;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 5px;
+            height: 32px;
+            width: 32px;
             cursor: pointer;
+            color: rgba(211, 211, 211, 1);
+
+            .icon {
+                height: 100%;
+                width: 100%;
+
+                path {
+                    stroke-width: 0.2;
+                }
+            }
+
+            &.active {
+                background: linear-gradient(180deg, #89F09C 0%, #3CC755 100%);
+                color: #fff;                
+            }
         }
     }
 }

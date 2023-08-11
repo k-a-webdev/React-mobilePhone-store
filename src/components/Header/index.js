@@ -1,11 +1,21 @@
 // import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { BsCart2, BsBookmarkHeart, BsBagCheck } from "react-icons/bs";
+
 import { useCart } from "../../hooks/useCart";
 
 import styles from './Header.module.scss';
+import { useEffect, useState } from "react";
 
 export default function Header(props) {
     const { totalPrice } = useCart();
+    const [headerSubtitle, setHeaderSubtitle] = useState('');
+    let location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === '/') setHeaderSubtitle('Shop of the best mobile phones')
+        else setHeaderSubtitle('Click to return to the homepage')
+    }, [location])
 
     return (
         <header>
@@ -15,36 +25,27 @@ export default function Header(props) {
 
                     <div className="headerInfo">
                         <h3>Mobile phone store</h3>
-                        <p>Shop of the best mobile phones</p>
+                        <p>{ headerSubtitle }</p>
                     </div>
                 </div>
             </Link>
 
             <ul className={styles.headerRight}>
                 <li onClick={props.onClickCart}>
-                    <img width="18" height="18" src="img/cart.svg" alt="Cart" />
+                    {/* <img width="18" height="18" src="img/cart.svg" alt="Cart" /> */}
+                    <BsCart2 className={styles.cartIcon} />
                     <span>{totalPrice} $</span>
                 </li>
 
                 <li>
                     <Link to="/favorites">
-                        <img
-                            width="18"
-                            height="18"
-                            src="img/heart.svg"
-                            alt="Favorites"
-                        />
+                        <BsBookmarkHeart className={styles.favoriteIcon} />
                     </Link>
                 </li>
 
                 <li>
                     <Link to="/orders">
-                        <img
-                            width="18"
-                            height="18"
-                            src="img/user.svg"
-                            alt="Profile"
-                        />
+                        <BsBagCheck className={styles.orderIcon} />
                     </Link>
                 </li>
             </ul>

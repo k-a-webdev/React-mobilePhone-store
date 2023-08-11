@@ -14,6 +14,7 @@ import Drawer from "./components/Drawer";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
     const { itemsUrl, cartUrl, favoriteUrl } = urls;
@@ -60,9 +61,11 @@ export default function App() {
     // Func adding to cart/favorites
     const addToDb = async (item, db) => {
         const currentDb = {
-            items: eval(`${db}Items`), 
-            setFunc: eval(`set${db.charAt(0).toUpperCase() + db.slice(1)}Items`),
-            dbUrl: eval(`${db}Url`)
+            items: eval(`${db}Items`),
+            setFunc: eval(
+                `set${db.charAt(0).toUpperCase() + db.slice(1)}Items`
+            ),
+            dbUrl: eval(`${db}Url`),
         };
 
         try {
@@ -117,10 +120,10 @@ export default function App() {
     // To check whether the item is in the cart/favorites
     const isItemInDb = (id, db) => {
         const currentDb = {
-            items: eval(`${db}Items`), 
+            items: eval(`${db}Items`),
         };
         return currentDb.items.some((card) => card.id === id);
-    }
+    };
 
     return (
         <AppContext.Provider
@@ -144,20 +147,23 @@ export default function App() {
                 <Header onClickCart={() => setIsCartOpened(true)} />
 
                 <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <Home
-                                cards={cards}
-                                searchValue={searchValue}
-                                setSearchValue={setSearchValue}
-                                onChangeSearchInput={onChangeSearchInput}
-                                isLoading={isLoading}
-                            />
-                        }
-                    />
-                    <Route path="/favorites" element={<Favorites />} />
-                    <Route path="/orders" element={<Orders />} />
+                    <Route path="/">
+                        <Route
+                            path=""
+                            element={
+                                <Home
+                                    cards={cards}
+                                    searchValue={searchValue}
+                                    setSearchValue={setSearchValue}
+                                    onChangeSearchInput={onChangeSearchInput}
+                                    isLoading={isLoading}
+                                />
+                            }
+                        />
+                        <Route path="favorites" element={<Favorites />} />
+                        <Route path="orders" element={<Orders />} />
+                        <Route path="*" element={<PageNotFound />} />
+                    </Route>
                     {/* TODO: Розширити orders сторінками, щоб по 5-10 ордерів на одній сторінці й так до 20-30. Також додати навігацію по сторінкам */}
                 </Routes>
                 {/* Зробити React Router для невідомих сторінок '*' 404 */}

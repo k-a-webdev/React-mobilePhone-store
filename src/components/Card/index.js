@@ -1,7 +1,9 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import ContentLoader from "react-content-loader";
 import styles from "./Card.module.scss";
 import AppContext from "../../context";
+import { BsPlus, BsCheck } from "react-icons/bs";
+
 
 export default function Card({
     api_id,
@@ -67,16 +69,10 @@ export default function Card({
                             <p>Price:</p>
                             <b>{price} $</b>
                         </div>
-
-                        <img
-                            src={
-                                added
-                                    ? "img/btn_checked.svg"
-                                    : "img/btn_add.svg"
-                            }
-                            alt="Button add"
-                            onClick={ () => addToDb(cardInfo, 'cart') }
-                        />
+                        
+                        <div className={`${styles.addToCart} ${ added ? styles.active : ''}`} onClick={ () => addToDb(cardInfo, 'cart') }>
+                            { added ? <BsCheck className={styles.icon} /> : <BsPlus className={styles.icon} />}
+                        </div>
                     </div>
                 </>
             )}
