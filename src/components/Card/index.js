@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import ContentLoader from "react-content-loader";
-import styles from "./Card.module.scss";
-import AppContext from "../../context";
 import { BsPlus, BsCheck } from "react-icons/bs";
+
+import AppContext from "../../context";
+
+import styles from "./Card.module.scss";
 
 export default function Card({ api_id, id, title, price, loading = false }) {
     const { isItemInDb, addToDb } = useContext(AppContext);

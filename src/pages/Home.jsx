@@ -42,12 +42,12 @@ export default function Home({
                         value={searchValue}
                     />
                     {searchValue && (
-                        <img
-                            className="remove__btn"
-                            src="img/btn_remove.svg"
-                            alt="Clear"
-                            onClick={() => setSearchValue("")}
-                        />
+                        <div className="close_btn">
+                            <BsX
+                                className="icon"
+                                onClick={() => setSearchValue("")}
+                            />
+                        </div>
                     )}
                 </div>
             </div>

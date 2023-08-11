@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import { BsX } from "react-icons/bs";
 
-
 import Info from "../Info";
 import { useCart } from "../../hooks/useCart";
 import { fullDate } from "../orderDate";
@@ -27,7 +26,7 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
                 "https://64c79fc4a1fe0128fbd50a97.mockapi.io/orders",
                 {
                     items: cartItems,
-                    fullDate
+                    fullDate,
                 }
             );
             for (let i = 0; i < cartItems.length; i++) {
@@ -57,10 +56,8 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
             <div className={styles.drawer}>
                 <h2>
                     My cart
-                    <div className={styles.btn_close}>
-                        <BsX className={styles.icon}
-                            onClick={onClose}
-                        />
+                    <div className={styles.close_btn}>
+                        <BsX className={styles.icon} onClick={onClose} />
                     </div>
                 </h2>
 
@@ -85,8 +82,9 @@ export default function Driwer({ onClose, addToDb, items = [], opened }) {
                                             <b>{item.price} $</b>
                                         </div>
 
-                                        <div className={styles.btn_close}>
-                                            <BsX className={styles.icon}
+                                        <div className={styles.close_btn}>
+                                            <BsX
+                                                className={styles.icon}
                                                 onClick={() =>
                                                     addToDb(item, "cart")
                                                 }
