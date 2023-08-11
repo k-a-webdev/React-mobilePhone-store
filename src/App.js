@@ -105,6 +105,7 @@ export default function App() {
         }
     };
 
+    // Func deleting from cart/favorites
     const removeFromDb = async (id, cardId, setFunc, url) => {
         try {
             setFunc((prev) => prev.filter((item) => item.id !== cardId));

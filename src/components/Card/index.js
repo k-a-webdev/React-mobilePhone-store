@@ -4,18 +4,11 @@ import styles from "./Card.module.scss";
 import AppContext from "../../context";
 import { BsPlus, BsCheck } from "react-icons/bs";
 
+export default function Card({ api_id, id, title, price, loading = false }) {
+    const { isItemInDb, addToDb } = useContext(AppContext);
 
-export default function Card({
-    api_id,
-    id,
-    title,
-    price,
-    loading = false,
-}) {
-    const { isItemInDb, addToDb} = useContext(AppContext);
-
-    const added = isItemInDb(id, 'cart');
-    const favorited = isItemInDb(id, 'favorite');
+    const added = isItemInDb(id, "cart");
+    const favorited = isItemInDb(id, "favorite");
 
     const cardInfo = { id, title, price, api_id };
 
@@ -45,12 +38,18 @@ export default function Card({
                 </ContentLoader>
             ) : (
                 <>
-                    <div className={styles.favorite} onClick={ () => addToDb(cardInfo, 'favorite') }>
+                    <div
+                        className={styles.favorite}
+                        onClick={() => addToDb(cardInfo, "favorite")}
+                        title={
+                            favorited
+                                ? "Delete from favorite"
+                                : "Add to favorite"
+                        }
+                    >
                         <img
                             src={
-                                favorited
-                                    ? "img/liked.svg"
-                                    : "img/unliked.svg"
+                                favorited ? "img/liked.svg" : "img/unliked.svg"
                             }
                             alt="Like"
                         />
@@ -69,9 +68,19 @@ export default function Card({
                             <p>Price:</p>
                             <b>{price} $</b>
                         </div>
-                        
-                        <div className={`${styles.addToCart} ${ added ? styles.active : ''}`} onClick={ () => addToDb(cardInfo, 'cart') }>
-                            { added ? <BsCheck className={styles.icon} /> : <BsPlus className={styles.icon} />}
+
+                        <div
+                            className={`${styles.addToCart} ${
+                                added ? styles.active : ""
+                            }`}
+                            onClick={() => addToDb(cardInfo, "cart")}
+                            title={added ? "Delete from cart" : "Add to cart"}
+                        >
+                            {added ? (
+                                <BsCheck className={styles.icon} />
+                            ) : (
+                                <BsPlus className={styles.icon} />
+                            )}
                         </div>
                     </div>
                 </>

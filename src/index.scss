@@ -9,7 +9,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #e7f6ff;
-    // background-color: #f5e7ff;
 }
 a {
     text-decoration: none;
@@ -32,8 +31,9 @@ a {
         width: 100%;
         margin-bottom: 20px;
         position: relative;
-        
-        .swiper-button-next, .swiper-button-prev {
+
+        .swiper-button-next,
+        .swiper-button-prev {
             --swiper-navigation-size: large;
             width: 40px;
             height: 40px;
@@ -67,12 +67,11 @@ a {
                     color: #fff;
                     width: 25%;
                     margin-left: 60px;
-                    text-shadow: -0.25px 0 #111, 0 0.25px #111, 0.25px 0 #111, 0 -0.25px #111;
+                    text-shadow: -0.25px 0 #111, 0 0.25px #111, 0.25px 0 #111,
+                        0 -0.25px #111;
                 }
             }
         }
-
-        
     }
 
     .content__header {
@@ -217,8 +216,6 @@ a {
         }
     }
 }
-
-
 
 @media (max-width: 480px) {
     .wrapper {

@@ -18,18 +18,12 @@ export default function Home({
             .map((elem, index) => ({ id: index }));
 
         return (isLoading ? fakeCards : filteredCards).map((card, index) => (
-            <Card
-                {...card}
-                // key={card.id}
-                key={card.id}
-                loading={isLoading}
-            />
+            <Card {...card} key={card.id} loading={isLoading} />
         ));
     };
 
     return (
         <div className="content">
-            
             <Slider />
 
             <div className="content__header">
@@ -39,7 +33,7 @@ export default function Home({
                         : "All mobile phones"}
                 </h1>
 
-                <div className="seaerch_block">
+                <div className="seaerch_block" title="Search">
                     <img src="img/search.svg" alt="Search" />
 
                     <input

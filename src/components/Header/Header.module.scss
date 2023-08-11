@@ -1,6 +1,6 @@
 header {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     padding: 40px;
     border-bottom: 1px solid #eaeaea;
@@ -63,7 +63,8 @@ header {
                 margin-right: 15px;
             }
 
-            .favoriteIcon, .orderIcon{
+            .favoriteIcon,
+            .orderIcon {
                 @include headerIcon();
             }
         }
@@ -86,7 +87,9 @@ header {
         span {
             font-size: 20px;
         }
-        .cartIcon, .favoriteIcon, .orderIcon{
+        .cartIcon,
+        .favoriteIcon,
+        .orderIcon {
             height: 25px !important;
         }
     }

@@ -230,3 +230,9 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 480px) {
+    .drawer {
+        width: 100% !important;
+    }
+}

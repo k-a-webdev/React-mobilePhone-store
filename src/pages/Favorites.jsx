@@ -12,15 +12,17 @@ export default function Favorite() {
     const fakeCards = new Array(4)
         .fill({})
         .map((elem, index) => ({ id: index }));
-    
+
     useEffect(() => {
         setIsLoading(false);
-    }, [])
+    }, []);
 
     return (
         <div className="content">
             <div className="content__header">
-                {(isLoading || favoriteItems.length > 0) && <h1>My favorites</h1>}
+                {(isLoading || favoriteItems.length > 0) && (
+                    <h1>My favorites</h1>
+                )}
             </div>
 
             <div className="cards">
@@ -29,7 +31,9 @@ export default function Favorite() {
                 ))}
             </div>
 
-            {!isLoading && favoriteItems.length === 0 && <NoData db="favorite" />}
+            {!isLoading && favoriteItems.length === 0 && (
+                <NoData db="favorite" />
+            )}
         </div>
     );
 }
