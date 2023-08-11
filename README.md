@@ -35,3 +35,7 @@ Using the buttons in the header, you can open the shopping cart, go to the page 
 ![Preview photo](public/img/previews/Preview_5.png)
 
 ![Preview photo](public/img/previews/Preview_6.png)
+
+![Preview photo](public/img/previews/Preview_7.png)
+
+![Preview photo](public/img/previews/Preview_8.png)
