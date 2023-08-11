@@ -36,6 +36,12 @@ Using the buttons in the header, you can open the shopping cart, go to the page 
 
 ![Preview photo](public/img/previews/Preview_6.png)
 
-![Preview photo](public/img/previews/Preview_7.png)
-
-![Preview photo](public/img/previews/Preview_8.png)
+<div style='
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+'>
+<img src='public/img/previews/Preview_7.png' width='45%' />
+<img src='public/img/previews/Preview_8.png' width='45%' />
+</div>
