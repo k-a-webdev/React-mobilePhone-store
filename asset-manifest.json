@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/React-mobilePhone-store/static/css/main.e108643e.css",
-    "main.js": "/React-mobilePhone-store/static/js/main.a6ad14dd.js",
+    "main.css": "/React-mobilePhone-store/static/css/main.1bb6dda1.css",
+    "main.js": "/React-mobilePhone-store/static/js/main.ce36cb08.js",
     "index.html": "/React-mobilePhone-store/index.html",
-    "main.e108643e.css.map": "/React-mobilePhone-store/static/css/main.e108643e.css.map",
-    "main.a6ad14dd.js.map": "/React-mobilePhone-store/static/js/main.a6ad14dd.js.map"
+    "main.1bb6dda1.css.map": "/React-mobilePhone-store/static/css/main.1bb6dda1.css.map",
+    "main.ce36cb08.js.map": "/React-mobilePhone-store/static/js/main.ce36cb08.js.map"
   },
   "entrypoints": [
-    "static/css/main.e108643e.css",
-    "static/js/main.a6ad14dd.js"
+    "static/css/main.1bb6dda1.css",
+    "static/js/main.ce36cb08.js"
   ]
 }
