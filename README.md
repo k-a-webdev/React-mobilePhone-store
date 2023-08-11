@@ -20,7 +20,7 @@ In this project I used:
 [Link on this website](https://k-a-webdev.github.io/React-mobilePhone-store/)
 
 ## Features
-This web-application is responsive not responsive yet. \
+This web-application is responsive. \
 Phones can be added not only to the cart, but also to favorites. All data is stored in a remote json file.
 Using the buttons in the header, you can open the shopping cart, go to the page of your favorite products and go to the page with already completed purchases.
 
