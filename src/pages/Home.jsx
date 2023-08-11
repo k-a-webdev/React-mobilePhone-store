@@ -1,3 +1,5 @@
+import { BsX } from "react-icons/bs";
+
 import Card from "../components/Card";
 import Slider from "../components/Slider";
 
